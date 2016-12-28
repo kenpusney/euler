@@ -52,7 +52,7 @@ def rows(matrix, size):
 
 def cols(matrix, size):
     for i in range(size):
-        yield map(lambda r: r[i], matrix)
+        yield [r[i] for r in matrix]
 
 def ldiags(m, size):
     for i in range(size):
