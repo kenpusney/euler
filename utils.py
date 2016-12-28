@@ -38,5 +38,44 @@ def slide(lst, size):
         index += 1
 
 def divide(n):
-	for i in range(1, n):
-		yield (i, n - i)
+    for i in range(1, n):
+        yield (i, n - i)
+
+def matrix(iterable, n):
+    return map(lambda gp: list(map(lambda it: it[1], gp[1])), 
+            itertools.groupby(enumerate(iterable), lambda it: it[0] // n))
+
+def rows(matrix, size):
+    lst = list(matrix)
+    for i in range(size):
+        yield lst[i]
+
+def cols(matrix, size):
+    for i in range(size):
+        yield map(lambda r: r[i], matrix)
+
+def ldiags(m, size):
+    for i in range(size):
+        yield lcollect(m, 0, i, size)
+    for i in range(1, size):
+        yield lcollect(m, i, 1, size)
+
+def lcollect(m, i, j, size):
+    for x in range(i, size):
+        yield m[x][j]
+        j += 1
+        if j >= size:
+            break
+
+def rdiags(m, size):
+    for i in range(size):
+        yield rcollect(m, 0, i, size)
+    for i in range(1, size):
+        yield rcollect(m, i, size-1, size)
+
+def rcollect(m, i, j, size):
+    for x in range(i, size):
+        yield m[x][j]
+        j -= 1
+        if j < 0:
+            break
