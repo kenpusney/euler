@@ -36,3 +36,7 @@ def slide(lst, size):
     while index + size <= len(lst):
         yield lst[index:index+size]
         index += 1
+
+def divide(n):
+	for i in range(1, n):
+		yield (i, n - i)

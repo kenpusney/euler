@@ -92,3 +92,28 @@ src = '''
 '''.replace("\n", "")
 max([functools.reduce(lambda x, y: x * y, s) for s in slide(list(map(int, src)), 13)])
 ```
+
+### Problem 9
+
+Python
+```python
+def triplet(n):
+    cache = set()
+    for (i, j) in divide(n):
+        for (j, k) in divide(j):
+            fst, snd, trd = sorted([i, j, k])
+            key = '-'.join(map(str, [fst, snd, trd]))
+            if key in cache:
+                continue
+            if (fst ** 2 + snd ** 2 == trd ** 2):
+                yield (fst, snd, trd)
+            cache.update([key])
+list(map(lambda t: functools.reduce(lambda a, b: a*b, t), triplet(1000)))
+```
+
+### Problem 10
+
+Python
+```python
+sum(primes(2000000))
+```
