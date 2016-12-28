@@ -29,3 +29,10 @@ def lcm(a, b):
 
 def lcmm(*args):
     return functools.reduce(lcm, args)
+
+def slide(lst, size):
+    if size > len(lst): return None
+    index = 0
+    while index + size <= len(lst):
+        yield lst[index:index+size]
+        index += 1
