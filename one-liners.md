@@ -117,3 +117,9 @@ Python
 ```python
 sum(primes(2000000))
 ```
+
+### Problem 13
+
+```python
+str(sum(map(int, text.split('\n'))))[0:10]
+```
