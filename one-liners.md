@@ -129,3 +129,9 @@ str(sum(map(int, text.split('\n'))))[0:10]
 ```python
 sum(map(int, list(str(2**1000))))
 ```
+
+### Problem 20
+
+```python
+sum(map(int, list(str(fact(100)))))
+```
