@@ -123,3 +123,9 @@ sum(primes(2000000))
 ```python
 str(sum(map(int, text.split('\n'))))[0:10]
 ```
+
+### Problem 16
+
+```python
+sum(map(int, list(str(2**1000))))
+```
