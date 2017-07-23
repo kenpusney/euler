@@ -45,3 +45,7 @@ def solution11():
 
 print(solution11())
 
+def solution12():
+    for i in range(2, 50000):
+        if (len(factors(sum(range(1, i + 1)))) >= 500):
+            return sum(range(1, i + 1));
