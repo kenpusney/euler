@@ -135,3 +135,13 @@ sum(map(int, list(str(2**1000))))
 ```python
 sum(map(int, list(str(fact(100)))))
 ```
+
+### Problem 48
+
+```python
+solution48 = 0;
+for i in range(1, 1001):
+	solution48 += pow(i, i)
+
+str(solution48)[-10:]
+```
